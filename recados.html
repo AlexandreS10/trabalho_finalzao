@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="recados.css">
+    <title>Recados</title>
+
+
+</head>
+<nav>
+
+</nav>
+
+<body class="body">
+    <div class="main">
+
+        <a>
+            <img id="imgLogo" src="/img/Audi-LogoPNG.png" alt="logo Audi">
+        </a>
+        <div class="dados">
+            <div>
+                <h2>Dados da Reservas</h2>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><label for="date-input" class="form-label">Data/retirada</label>
+                            <input type="date" class="form-control" id="date-input">
+                        </th>
+                        <th scope="col">Modelo do Veículo</th>
+                        <th><label for="date-input" class="form-label">Data/Entrega</label>
+                            <input type="date" class="form-control" id="date-input">
+                        </th>
+                        <th scope="col">Item Opcional</th>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody id="transactions-list">
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+    <div class="btn">
+        <button class="button">Voltar</button>
+        <button type="submit" class="btn button-default">Adicionar</button>
+
+        <button type="button" class="btn btn-secondary button-cancel" data-bs-dismiss="modal">Cancelar</button>
+    </div>
+
+    <script src="./recados.js"></script>
+</body>
+
+</html>
