@@ -19,7 +19,7 @@
     <div>
 
         <form id="form">
-            <fieldset>
+            <fieldset style="margin-bottom: 5px;">
                 <legend>
                     <h3>Dados pessoais</h3>
                 </legend>
@@ -48,33 +48,6 @@
                     <label for="estado">Estado:</label>
                     <select id="estado" name="estado" required>
                         <option value="selecione" selected>Selecione</option>
-                        <option value="AC">Acre</option>
-                        <option value="AL">Alagoas</option>
-                        <option value="AP">Amapá</option>
-                        <option value="AM">Amazonas</option>
-                        <option value="BA">Bahia</option>
-                        <option value="CE">Ceara</option>
-                        <option value="DF">Distrito Federal</option>
-                        <option value="ES">Espirito Santo</option>
-                        <option value="GO">Goiás</option>
-                        <option value="MA">Maranhão</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="PA">Pará</option>
-                        <option value="PB">Paraíba</option>
-                        <option value="PR">Paraná</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="PI">Piauí</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="RO">Rondônia</option>
-                        <option value="RR">Roraima</option>
-                        <option value="SC">Santa Catarina</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="SE">Sergipe</option>
-                        <option value="TO">Tocantins</option>
 
                     </select>
 
@@ -84,54 +57,29 @@
 
                 <div>
                     <label for="cargo"> Área de Atuação:</label><br>
-                    <select id="profissão" name="profissão" required>
+                    <select id="profissao" name="profissao" required>
 
                         <option value="selecione" selected>Selecione</option>
-                        <option value="AG">Agronomia</option>
-                        <option value="AD">Administração</option>
-                        <option value="AR">Arquitetura e Urbanismo</option>
-                        <option value="BI">Biológicas</option>
-                        <option value="CN">Contábeis</option>
-                        <option value="CO">Comunicação</option>
-                        <option value="CI">Cinema</option>
-                        <option value="DI">Direito</option>
-                        <option value="DS">Designer</option>
-                        <option value="EO">Economia</option>
-                        <option value="ED">Educação</option>
-                        <option value="EN">Engenharia/geral</option>
-                        <option value="EC">Ecologia</option>
-                        <option value="ES">Estética</option>
-                        <option value="JN">Jornalismo</option>
-                        <option value="MO">Moda</option>
-                        <option value="MU">Música</option>
-                        <option value="OP">Operador de maquinário</option>
-                        <option value="PR">Produção/geral</option>
-                        <option value="PU">Publicidade</option>
-                        <option value="RH">Relações Humanas</option>
-                        <option value="SA">Saúde/geral</option>
-                        <option value="TC">Tecnologia/geral</option>
-                        <option value="TU">Turismo</option>
-                        <option value="VN">Vendas/geral</option>
-                        <option value="VT">Veterinária</option>
-                        <option value="ZT">Zootecnia</option>
+
                 </div>
+                <div>
+                    <label for="Salario">Sua Renda mensal</label>
+                    <input id="Salario" type="number" name="Salario" max="" min="2" placeholder="Sua Renda mensal"
+                        required>
+                    <br><br>
 
-
+                </div>
             </fieldset>
-            <div>
-                <label for="Salario"></label>
-                <input id="Salario" type="number" name="Salario" max="" min="2" placeholder="Sua Renda mensal" required>
-                <br><br>
 
-            </div>
-            <div>
-                <input id="enviar" type="button" value="Enviar" />
-                <a href="index.html"></a>
-                <input type="reset" value="Limpar" />
-            </div>
+            <input type="submit" value="Enviar" />
+
+            <input type="reset" value="Limpar" />
+
+        </form>
+        <a href="index.html">Voltar para login</a>
     </div>
-    </form>
-    <script type="text/javascript" src="./formulario.js"></script>
+
+    <script src="./formulario.js"></script>
 </body>
 
 </html>

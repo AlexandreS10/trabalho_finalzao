@@ -1,7 +1,8 @@
-const recados = document.querySelectorAll("table[]");
-document.querySelector("").addEventListener("submit", (e) => {
-  e.preventDefault();
-  recados.forEach((el) => {
-    console.log(el.value);
-  });
-});
+const showModal = () => {
+  const modal = document.getElementById("modal-insert");
+  if (modal.style.display === "none") {
+    modal.style.display = "block";
+  } else {
+    modal.style.display = "none";
+  }
+};

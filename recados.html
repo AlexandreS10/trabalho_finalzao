@@ -46,12 +46,47 @@
             </table>
 
         </div>
-    </div>
-    <div class="btn">
-        <button class="button">Voltar</button>
-        <button type="submit" class="btn button-default">Adicionar</button>
+        <div class="btn">
+            <button class="button">Voltar</button>
+            <button type="button" class="btn button-default" onclick="showModal()">Adicionar</button>
 
-        <button type="button" class="btn btn-secondary button-cancel" data-bs-dismiss="modal">Cancelar</button>
+
+        </div>
+    </div>
+
+    <!-- modal de add dados -->
+    <div id="modal-insert">
+        <form id='modal-form-insert' action="">
+            <div class="flex-col">
+                <button id="close-modal" class="a-self" onclick="showModal()">x</button>
+                <h2>Nova reserva</h2>
+                <div class="div-form">
+
+                    <label for="">Nome do Locador</label>
+                    <input type="text">
+                    <label for="">data da Retirada</label>
+                    <input type="date">
+                    <label for="">Tipo do Carro</label>
+                    <input type="text">
+                    <label for="">Data da Entrega</label>
+                    <input type="date">
+                    <label for="">Opcionais *</label>
+                    <input type="text">
+
+                </div>
+
+                <div>
+                    <input type="reset" value="Limpar">
+                    <input type="submit" value="Adicionar">
+                </div>
+
+            </div>
+
+
+
+
+
+        </form>
     </div>
 
     <script src="./recados.js"></script>

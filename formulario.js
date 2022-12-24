@@ -28,14 +28,13 @@ const estados = [
   { value: "TO", nome: "Tocantins" },
 ];
 
+const selectEstados = document.getElementById("estado");
 estados.forEach(
   (estado) =>
-    (document.getElementById(
-      "estado"
-    ).innerHTML += `<option value="${estado.value}">${estado.nome}</option`)
+    (selectEstados.innerHTML += `<option value="${estado.value}">${estado.nome}</option`)
 );
 
-const profissao = [
+const _profissao = [
   { value: "AG", nome: "Agronomia" },
   { value: "AD", nome: "Administração" },
   { value: "AR", nome: "Arquitetura e Urbanismo" },
@@ -64,80 +63,53 @@ const profissao = [
   { value: "VT", nome: "Veterinária" },
   { value: "ZT", nome: "Zootecnia" },
 ];
-profissao.forEach(
+const selectProfissao = document.getElementById("profissao");
+_profissao.forEach(
   (profissao) =>
-    (document.getElementById(
-      "profissão"
-    ).innerHTML += `<option value="${profissao.value}">${profissao.nome}</option`)
+    (selectProfissao.innerHTML += `<option value="${profissao.value}">${profissao.nome}</option>`)
 );
-
-const btnEnviar = document.getElementById("enviar");
-
 //tenho que trazer os dados do localStorage, senao existir, eu trago um vetor vazio
 let db = JSON.parse(localStorage.getItem("usuarios") || "[]");
-btnEnviar.addEventListener("click", (e) => {
+
+const formulario = document.getElementById("form");
+formulario.addEventListener("submit", (e) => {
   e.preventDefault();
-  let nome = document.getElementById("nome").value;
-  let sobreNome = document.getElementById("Sobrenome").value;
-  let email = document.getElementById("email").value;
-  let senha = document.getElementById("senha").value;
-  let endereco = document.getElementById("endereco").value;
-  let cidade = document.getElementById("cidade").value;
-  let estado = document.getElementById("estado").value;
-  let profissao = document.getElementById("profissão").value;
-  let salario = document.getElementById("Salario").value;
-  if (
-    nome === "" ||
-    sobreNome === "" ||
-    email === "" ||
-    senha === "" ||
-    endereco === "" ||
-    cidade === "" ||
-    estado === "selecione" ||
-    profissao === "selecione" ||
-    salario === "selecione"
-  ) {
-    alert("Dados pessoais são obrigatórios!");
-  } else {
-    let dadosUsuario = {
-      nome,
-      sobreNome,
-      email,
-      senha,
-      endereco,
-      cidade,
-      estado,
-      profissao,
-      salario,
-    };
+  let nome = document.getElementById("nome");
+  let sobreNome = document.getElementById("Sobrenome");
+  let email = document.getElementById("email");
+  let senha = document.getElementById("senha");
+  let endereco = document.getElementById("endereco");
+  let cidade = document.getElementById("cidade");
+  let estado = document.getElementById("estado");
+  let profissao = document.getElementById("profissao");
+  let salario = document.getElementById("Salario");
 
-    console.log(dadosUsuario);
-    //salvo no vetor
-    db.push(dadosUsuario);
-    //salvo no localstorage
-    localStorage.setItem("usuarios", JSON.stringify(db));
-    printDados(dadosUsuario);
-    resetDados();
+  const jaExisteEmail = db.some((user) => user.email === email.value);
 
-    alert("Dados enviados");
-    window.location.href = "index.html";
+  if (jaExisteEmail) {
+    alert("Email já cadastrado!");
+    return;
   }
+
+  let dadosUsuario = {
+    nome: nome.value,
+    sobreNome: sobreNome.value,
+    email: email.value,
+    senha: senha.value,
+    endereco: endereco.value,
+    cidade: cidade.value,
+    estado: estado.value,
+    profissao: profissao.value,
+    salario: salario.value,
+  };
+
+  //salvo no vetor
+  db.push(dadosUsuario);
+  //salvo no localstorage
+  localStorage.setItem("usuarios", JSON.stringify(db));
+
+  formulario.reset();
+
+  alert("Dados enviados");
+  window.location.href = "index.html";
 });
-
-function printDados(dados) {
-  for (const key in dados) {
-    console.log(`${key} : ${dados[key]}`);
-  }
-}
-
-function resetDados() {
-  document.getElementById("nome").value = "";
-  document.getElementById("Sobrenome").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("senha").value = "";
-  document.getElementById("endereco").value = "";
-  document.getElementById("cidade").value = "";
-  document.getElementById("estado").value = "";
-  document.getElementById("profissão").value = "";
-  document.getElementById("Salario").value = "";
-}
